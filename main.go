@@ -97,11 +97,11 @@ func handleError(err error) {
 
 func doComand(b bytes.Buffer, name string) (string, error) {
 	mode, flags := parseArgs()
-	_, err := exec.LookPath("rofi")
-
+	_, err := exec.LookPath(mode)
 	handleError(err)
 
-	flags = append(flags, []string{"-p", name}...)
+	prompt := fmt.Sprintf("%s [%d]", name, len(W.windows))
+	flags = append(flags, []string{"-p", prompt}...)
 	cmd := exec.Command(mode, flags...)
 	cmd.Stdin = &b
 
