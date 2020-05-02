@@ -40,12 +40,6 @@ Rofi
 bindsym $mod+Shift+w exec /windowswitcher -mode "rofi" -dmenu
 ```
 
-
-## Authors
-
-* **Patryk Wegrzyn** - *Initial work* - [PurpleBooth](https://github.com/patrykwegrzyn)
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
