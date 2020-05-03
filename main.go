@@ -79,6 +79,10 @@ func main() {
 	window, err := W.getWindow(selection)
 	handleError(err)
 
+	if window.id == focused.id {
+		os.Exit(3)
+	}
+
 	if fullscreen {
 		_, err := i3Command(window.id, "fullscreen")
 		handleError(err)
