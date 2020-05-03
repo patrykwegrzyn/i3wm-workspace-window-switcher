@@ -36,7 +36,7 @@ func (ww *Workspace) getWindow(name string) (Window, error) {
 
 }
 
-func (ww *Workspace) getWindowNamesAsBuffer() bytes.Buffer {
+func (ww *Workspace) getWindowNames() bytes.Buffer {
 	buffer := bytes.Buffer{}
 	for _, w := range ww.windows {
 		buffer.Write([]byte(fmt.Sprintln(w.name)))
@@ -69,7 +69,7 @@ func main() {
 		}
 	}
 
-	buffer := W.getWindowNamesAsBuffer()
+	buffer := W.getWindowNames()
 	selection, err := doComand(buffer, W.name)
 	handleError(err)
 
